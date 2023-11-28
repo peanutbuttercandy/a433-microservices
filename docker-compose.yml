@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #docker compose versi 3.8
 version: "3.8"
 
@@ -23,3 +24,30 @@ services:
 #mengatur bridge volume untuk item-db
 volumes:
   app-db:
+=======
+#docker compose versi 3.8
+version: "3.8"
+
+services:
+#mengatur services untuk container item-db
+  item-db:
+    image: mongo:3
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - app-db:/data/db
+
+#mengatur service untuk container item-app
+  item-app:
+    image: ghcr.io/peanutbuttercandy/item-app:v1
+    depends_on:
+      - item-db
+    restart: always
+    ports:
+      - 80:8080
+
+#mengatur bridge volume untuk item-db
+volumes:
+  app-db:
+>>>>>>> f5c535acd88f7106e95b1d5f2dbb49a32f972b78

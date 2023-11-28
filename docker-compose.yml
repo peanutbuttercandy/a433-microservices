@@ -13,7 +13,7 @@ services:
 
 #mengatur service untuk container item-app
   item-app:
-    image: nadirabelindaaa/item-app:v1
+    image: ghcr.io/peanutbuttercandy/item-app:v1
     depends_on:
       - item-db
     restart: always

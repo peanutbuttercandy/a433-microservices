@@ -9,7 +9,7 @@ COPY . /app
 
 #menciptakan node env agar aplikasi berada dalam production 
 #mode dan item-db sebagai database host
-ENV ENV NODE_ENV=production DB_HOST=item-db
+ENV NODE_ENV=production DB_HOST=item-db
 
 #install dependencies dan build aplikasi
 RUN npm install --production --unsafe-perm && npm run build
